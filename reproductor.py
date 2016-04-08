@@ -11,132 +11,132 @@ class reproductor:
 
       
       def encender(self):
-         if self.rep_encendido == False:
+         if (self.rep_encendido == False):
              self.rep_encendido = True
-             print "bienvenido"
+             print ("bienvenido")
       def apagar(self):
-         if self.rep_encendido == True:
+         if (self.rep_encendido == True):
              self.rep_encendido = False
-             print "adios"
+             print ("adios")
       #debe insertar el nro de canciones.
       def insertar_cd(self,m):
          self.canciones = m
-         if self.rep_encendido == True:
-             if self.usb_interno == True:
+         if (self.rep_encendido == True):
+             if (self.usb_interno == True):
                  self.rep_cancion = False
-             if self.cd_interno == False:
+             if (self.cd_interno == False):
                  self.cd_interno = True
                  self.pos_cancion = 1 
-                 print "reproduciendo cd"
+                 print ("reproduciendo cd")
              else:
-                 print "ya hay un cd en la unidad "
+                 print ("ya hay un cd en la unidad ")
          else:
-              print "error, enciende el reproductor"
+              print ("error, enciende el reproductor")
                    
       def expulsar(self):
-          if self.rep_encendido == True:
-              if self.cd_interno == True:
+          if (self.rep_encendido == True):
+              if (self.cd_interno == True):
                   self.cd_interno = False
-                  print "expulsando"
+                  print ("expulsando")
               else:
-                  print " no hay cd en la unidad"
+                  print (" no hay cd en la unidad")
           else:
-              print "error, enciende el reproductor"
+              print ("error, enciende el reproductor")
                  
       def subir_vol(self,n):
-          if self.rep_encendido == True:
+          if (self.rep_encendido == True):
               for j in range(n):
-                  if self.volumen < self.max_vol:        
+                  if (self.volumen < self.max_vol):        
                       self.volumen = self.volumen + 1
-                      print "volumen:",self.volumen
+                      print ("volumen:",self.volumen)
                   else:
-                      print "volumen maximo"
+                      print ("volumen maximo")
                       break
           else:
-              print " error, enciende el reproductor"
+              print (" error, enciende el reproductor")
            
       def bajar_vol(self,n):
-          if self.rep_encendido == True:
+          if (self.rep_encendido == True):
               for j in range(n):
-                  if self.volumen > 0:
+                  if (self.volumen > 0):
                       self.volumen = self.volumen - 1
-                      print "volumen:",self.volumen
+                      print ("volumen:",self.volumen)
                   else:
-                      print "volumen al minimo"
+                      print ("volumen al minimo")
                       break
           else:
-              print "error, enciende el reproductor"
+              print ("error, enciende el reproductor")
       def adelante(self):
-         if self.rep_encendido == True:    
-              if self.pos_cancion < self.canciones:
+         if (self.rep_encendido == True):    
+              if (self.pos_cancion < self.canciones):
                   self.pos_cancion = self.pos_cancion + 1 
-                  print "cancion nro:",self.pos_cancion
+                  print ("cancion nro:",self.pos_cancion)
               else:
-                  print " ultima cancion"
+                  print (" ultima cancion")
          else:
-             print " error, enciende el reproductor"
+             print (" error, enciende el reproductor")
       def atras(self):
-          if self.rep_encendido == True:
-              if self.pos_cancion > 1:
+          if (self.rep_encendido == True):
+              if (self.pos_cancion > 1):
                   self.pos_cancion = self.pos_cancion - 1
-                  print "cancion nro:",self.pos_cancion
+                  print ("cancion nro:",self.pos_cancion)
               else:
-                  print " primera cancion"
+                  print (" primera cancion")
           else:
-              print "error, enciende el reproductor"
+              print ("error, enciende el reproductor")
       def reproducir(self):
-           if self.rep_encendido == True:
-               if self.rep_cancion == False:
+           if (self.rep_encendido == True):
+               if (self.rep_cancion == False):
                    self.rep_cancion = True
                    
                    
                else:
-                   print "ya esta reproduciendo"
+                   print ("ya esta reproduciendo")
            else:
-               print "error, enciende el reproductor"
+               print ("error, enciende el reproductor")
       def pausar(self):
-            if self.rep_encendido == True:
-                if self.rep_cancion == True:
+            if (self.rep_encendido == True):
+                if (self.rep_cancion == True):
                     self.rep_cancion = False
-                    print "pausado"
+                    print ("pausado")
                 else:
-                    print " esta en pausa"
+                    print (" esta en pausa")
             else:
-                print "error, enciende el reproductor"
+                print ("error, enciende el reproductor")
       #debe insertar el nro de canciones.
       def insertar_usb(self,n):
               self.canciones = n
-              if self.rep_encendido == True:
-                  if self.cd_interno == True:
+              if (self.rep_encendido == True):
+                  if (self.cd_interno == True):
                       rep_cancion = False
                       
-                  if self.usb_interno == False:
+                  if (self.usb_interno == False):
                       self.rep_cancion = False
                       self.usb_interno = True
                       self.reproducir()
                       self.pos_cancion = 1
-                      print "reproduciendo usb"
+                      print ("reproduciendo usb")
                   else:
-                      print "usb en la unidad"
+                      print ("usb en la unidad")
               else:
-                  print "error, enciende el reproductor"
+                  print ("error, enciende el reproductor")
                   
       #tiene que insertar una emisora cualquiera am o fm.
       def radio(self,n):
-          if self.rep_encendido == True:
+          if (self.rep_encendido == True):
               self.frecuencia = n
               if (type(n) == float):
                   self.rep_cancion = False
                   self.frecuencia = n
                   self.reproducir()
-                  print "reproduciendo radio su frecuencia es fm: ",n
+                  print ("reproduciendo radio su frecuencia es fm: ",n)
               else:
                   self.cambiar_frecuencia()
                   self.rep_cancion = False
                   self.reproducir()
-                  print "reproduciendo radio su frecuencia es am: ",n
+                  print ("reproduciendo radio su frecuencia es am: ",n)
           else:
-              print "error, enciende el reproductor"
+              print ("error, enciende el reproductor")
       
       def cambiar_frecuencia(self):
           if (self.rep_encendido == True):
@@ -145,7 +145,7 @@ class reproductor:
               else:
                   self.frecuencia_fm = True
           else:
-              "error, encienda el reproductor"
+              print ("error, encienda el reproductor")
               
             
                   
