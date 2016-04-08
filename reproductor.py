@@ -1,3 +1,4 @@
+#ver en repl.it: https://repl.it/CDaf/1
 class reproductor:
       rep_encendido = False
       max_vol = 10
