@@ -1,4 +1,10 @@
-#ver en repl.it: https://repl.it/CDaf/1
+# ver en repl.it: https://repl.it/CDaf/1
+# UNEFA Mérida
+# Integrantes: orlandoortega, Gerardouz, mariacolmenares
+# Profesor: javierri
+# Calificación:
+
+
 class reproductor:
       rep_encendido = False
       max_vol = 10
