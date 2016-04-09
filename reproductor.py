@@ -4,7 +4,6 @@
 # Profesor: javierri
 # Calificación:
 
-
 class reproductor:
       rep_encendido = False
       max_vol = 10
@@ -16,7 +15,6 @@ class reproductor:
       usb_interno = False
       frecuencia_fm = True
 
-      
       def encender(self):
          if (self.rep_encendido == False):
              self.rep_encendido = True
@@ -73,6 +71,7 @@ class reproductor:
                       break
           else:
               print ("error, enciende el reproductor")
+
       def adelante(self):
          if (self.rep_encendido == True):    
               if (self.pos_cancion < self.canciones):
@@ -91,16 +90,16 @@ class reproductor:
                   print (" primera cancion")
           else:
               print ("error, enciende el reproductor")
+
       def reproducir(self):
            if (self.rep_encendido == True):
                if (self.rep_cancion == False):
                    self.rep_cancion = True
-                   
-                   
                else:
                    print ("ya esta reproduciendo")
            else:
                print ("error, enciende el reproductor")
+
       def pausar(self):
             if (self.rep_encendido == True):
                 if (self.rep_cancion == True):
@@ -110,6 +109,7 @@ class reproductor:
                     print (" esta en pausa")
             else:
                 print ("error, enciende el reproductor")
+
       #debe insertar el nro de canciones.
       def insertar_usb(self,n):
               self.canciones = n
@@ -153,11 +153,7 @@ class reproductor:
                   self.frecuencia_fm = True
           else:
               print ("error, encienda el reproductor")
-              
-            
-                  
-                  
-                  
+
 reproductor = reproductor()
 reproductor.encender()
 reproductor.radio(101.1)
